@@ -1,0 +1,25 @@
+body {
+    background-color: #aaa;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    background-color: green;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 75px;
+}
+
+.heading {
+    padding-top: 8px;
+}
+
+.heading h1 {
+    margin: 0 16px;
+}
+
+header span {
+    margin: 0 16px;
+}
