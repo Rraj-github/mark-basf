@@ -98,6 +98,12 @@
             display: none !important;
         }
     </style>
+    
+    <script>
+        $(".password-label #forgotPassword").remove();
+        
+        $(".password-label #forgotPassword").detach().appendTo(".buttons");
+    </script>
 </head>
 
 <body>
