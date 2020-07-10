@@ -1,0 +1,102 @@
+/* Sign-In Page Styles */
+.basf-signin-wrapper::before {
+  content: "";
+  position: fixed;
+  background-color: #aaa;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.basf-signin {
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  margin-top: 162px;
+  margin-bottom: 80px;
+}
+
+.basf-signin span.close {
+  position: absolute;
+  top: 33.86px;
+  right: 41.87px;
+  font-size: 56px;
+  cursor: pointer;
+}
+
+.basf-signin #api .localAccount .intro {
+  margin-left: 86px;
+}
+
+.basf-signin #api .localAccount .intro h2 {
+  font-family: "Helvetica Neue Light" !important;
+  font-size: 36px !important;
+  font-weight: 300 !important;
+  margin-top: 90px;
+  margin-bottom: 31px;
+  color: #333333;
+  letter-spacing: normal;
+  line-height: 44px;
+}
+
+.basf-signin #api .localAccount .entry {
+  padding-left: 82px;
+}
+
+.basf-signin #api .localAccount .entry .entry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.basf-signin #api .localAccount .entry .entry-item label,
+.basf-signin #api .localAccount .entry .entry-item .password-label {
+  font-family: "Helvetica Neue Light";
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.basf-signin #api .localAccount .entry .entry-item input#logonIdentifier,
+.basf-signin #api .localAccount .entry .entry-item input#signInName,
+.basf-signin #api .localAccount .entry .entry-item input#password {
+  font-size: 18px;
+  font-family: "Helvetica Neue Light" !important;
+  padding: 16px 0 16px 17.45px;
+  width: 699px;
+  border: 1px solid #8f8f8f;
+  border-top: 2px solid #8f8f8f;
+  background: #f0f0f0;
+  color: #8f8f8f;
+}
+
+.basf-signin #api .localAccount .buttons {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.basf-signin #api .localAccount .buttons button#next {
+  font-size: 16px;
+  padding: 20px 77px;
+  background: #63af00;
+  border: none;
+  color: #fff;
+  font-family: "Helvetica Neue Roman";
+}
+
+.basf-signin #api .localAccount .buttons a#forgotPassword {
+  font-size: 16px;
+  margin-left: 29px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #60b100;
+}
+
+.basf-signin #api .localAccount .divider,
+.basf-signup #api .localAccount .create {
+  display: none !important;
+}

@@ -1,0 +1,34 @@
+/* @iconfontpath: "./resources/fonts"; */
+
+@font-face {
+  font-family: "Helvetica Neue Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/resources/fonts/HelveticaNeueLTW06-45Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("/resources/fonts/HelveticaNeueLTW06-45Light.woff") format("woff"),
+    url("/resources/fonts/HelveticaNeueLTW06-45Light.ttf") format("truetype"),
+    url("/resources/fonts/HelveticaNeueLTW06-45Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Roman";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/resources/fonts/HelveticaNeueLTW06-55Roman.eot?#iefix")
+      format("embedded-opentype"),
+    url("/resources/fonts/HelveticaNeueLTW06-55Roman.woff") format("woff"),
+    url("/resources/fonts/HelveticaNeueLTW06-55Roman.ttf") format("truetype"),
+    url("/resources/fonts/HelveticaNeueLTW06-55Roman.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/resources/fonts/HelveticaNeueLTW06-75Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/resources/fonts/HelveticaNeueLTW06-75Bold.woff") format("woff"),
+    url("/resources/fonts/HelveticaNeueLTW06-75Bold.ttf") format("truetype"),
+    url("/resources/fonts/HelveticaNeueLTW06-75Bold.woff2") format("woff2");
+}
