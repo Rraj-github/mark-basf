@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <title>BASF Login Page</title>
+  </head>
+
+  <body>
+    <div class="basf-signin-wrapper">
+      <div class="basf-signin">
+        <span class="close">&times;</span>
+        <div id="api" data-name="Unified">
+          <div
+            class="localAccount"
+            aria-label="Sign into your BASF account."
+            role="form"
+          >
+            <div class="intro">
+              <h2>Sign into your BASF account.</h2>
+            </div>
+            <div
+              class="error pageLevel"
+              aria-hidden="true"
+              style="display: none;"
+            >
+              <p role="alert"></p>
+            </div>
+            <div class="entry">
+              <div class="entry-item">
+                <label for="logonIdentifier">Email</label>
+                <div
+                  class="error itemLevel"
+                  aria-hidden="true"
+                  style="display: none;"
+                >
+                  <p role="alert"></p>
+                </div>
+                <input
+                  type="email"
+                  id="logonIdentifier"
+                  name="Username or email address"
+                  pattern="^[a-zA-Z0-9.!#$%&amp;’'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                  placeholder="Email Address"
+                  value=""
+                  tabindex="1"
+                />
+              </div>
+              <div class="entry-item">
+                <div class="password-label">Password</div>
+                <div
+                  class="error itemLevel"
+                  aria-hidden="true"
+                  style="display: none;"
+                >
+                  <p role="alert"></p>
+                </div>
+                <input
+                  type="password"
+                  id="password"
+                  name="Password"
+                  placeholder="Password"
+                  tabindex="1"
+                />
+              </div>
+              <div class="working"></div>
+              <div class="buttons">
+                <button id="next" tabindex="1">Sign in</button>
+                <a
+                  id="forgotPassword"
+                  tabindex="2"
+                  href="/bgp2.onmicrosoft.com/B2C_1_AEMFlow/api/CombinedSigninAndSignup/forgotPassword?csrf_token=RzRuOWMrOWYrek1LYWp5bzFpOHN6YVI0K051Y2tqc3AxU1hKVTNxdG4xUnAxaUhtaG9JL21WNXlqYTYwaDIvOUswdnNwZGJNV3ErYm5NSjV3OHo2Z3c9PTsyMDIwLTA3LTA5VDE3OjU0OjI5LjkxNzU3NjlaOy9kWkU5NDk1ZGZoUUVUdEdoc2FCRGc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJjNGJlMmQ3Yy0wOTQ0LTRiZTYtODFhZC01YjJmMTE3MTQwZTQifQ&amp;p=B2C_1_AEMFlow"
+                  >Forgot password?</a
+                >
+              </div>
+            </div>
+
+            <div class="divider">
+              <h2>OR</h2>
+            </div>
+            <div class="create">
+              <p>
+                Don't have an account?<a
+                  id="createAccount"
+                  tabindex="1"
+                  href="/bgp2.onmicrosoft.com/B2C_1_AEMFlow/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=RzRuOWMrOWYrek1LYWp5bzFpOHN6YVI0K051Y2tqc3AxU1hKVTNxdG4xUnAxaUhtaG9JL21WNXlqYTYwaDIvOUswdnNwZGJNV3ErYm5NSjV3OHo2Z3c9PTsyMDIwLTA3LTA5VDE3OjU0OjI5LjkxNzU3NjlaOy9kWkU5NDk1ZGZoUUVUdEdoc2FCRGc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJjNGJlMmQ3Yy0wOTQ0LTRiZTYtODFhZC01YjJmMTE3MTQwZTQifQ&amp;p=B2C_1_AEMFlow"
+                  >Sign up now</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".basf-signup #api .localAccount .intro h2").html(
+        "Sign into your BASF account."
+      );
+      $(".password-label #forgotPassword").detach().appendTo(".buttons");
+      $(".basf-signup #api .localAccount .entry .entry-item label").html(
+        "Email"
+      );
+      $(
+        ".basf-signup #api .localAccount .entry .entry-item .password-label"
+      ).html("Password");
+      $(".basf-signup #api .localAccount .buttons a#forgotPassword").html(
+        "Forgot password?"
+      );
+    </script>
+  </body>
+</html>
