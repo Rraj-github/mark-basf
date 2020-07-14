@@ -17,9 +17,9 @@
       }
       
       header {
-        background: #63AF00 !important;
-        width: 100% !important;
-        height: 78px !important;
+        background: #63AF00;
+        width: 100%;
+        height: 78px;
         margin-bottom: 16px;
       }
       
@@ -34,18 +34,17 @@
         margin: 0 auto;
         font-family: "Helvetica Neue Light";
         border: 2px solid seashell;
-        padding-bottom: 40px;
         height: auto;
         margin-bottom: 40px;
       }
 
       .basf-signUp #api {
-        margin-left: 180px;
-        margin-right: 180px;
+        margin-left: 200px;
+        margin-right: 200px;
       }
 
       .basf-signUp #api .intro > p {
-        font-family: "Helvetica Neue Light" !important;
+        font-family: "Helvetica Neue Light";
         font-size: 36px !important;
         font-weight: 300 !important;
         margin-top: 70px;
@@ -124,7 +123,7 @@
         color: #60b100;
         font-size: 16px;
         line-height: 18px;
-        font-family: "Helvetica Neue Regular";
+        font-family: "Helvetica Neue Roman";
       }
 
     </style>
@@ -140,18 +139,16 @@
     </div>
     
     <script>
-      $(document).ready(function() {
-        $(".basf-signUp #api .intro>p").html("Create your BASF account");
-        $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
-        
-        var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
-        var cellInput = $("#extension_CellPhone");
-        $(".buttons #continue").click(function() {
-          if(cellInput.val() != "cellInput.val().match(phoneNumber)") {
-            $("li:nth-child(12) .attrEntry.validate .error.itemLevel").html("Enter number in format 123-123-1234");
-          };
-        });
-      });
+      $(".basf-signUp #api .intro>p").html("Create your BASF account");
+      $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+
+//       var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
+//       var cellInput = $("#extension_CellPhone");
+//       $(".buttons #continue").click(function() {
+//         if(cellInput.val() != "cellInput.val().match(phoneNumber)") {
+//           $("li:nth-child(12) .attrEntry.validate .error.itemLevel").html("Enter number in format 123-123-1234");
+//         };
+//       });
     </script>
   </body>
 </html>
