@@ -295,7 +295,7 @@
         $(".basf-signUp #api .intro>p").html("Create your BASF account");
         $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
         
-        var stateInput = $("select#state");
+        var stateInput = $("#state");
         $(".buttons #continue").click(function() {
           if(stateInput.val() == "State") {
             $("li:nth-child(10)").append("<p>This is a required field</p>");
