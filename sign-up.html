@@ -295,10 +295,10 @@
         $(".basf-signUp #api .intro>p").html("Create your BASF account");
         $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
         
+        var stateInput = $("select#state");
         $(".buttons #continue").click(function() {
-          var stateInput = $("select#state");
           if(stateInput.val() == "State") {
-            $(".basf-signUp #attributeVerification .attr ul li:nth-child(10) .attrEntry.validate .error.itemLevel").html("This is a required field");
+            $("li:nth-child(10)").append("<p>This is a required field</p>");
           };
         });
       });
