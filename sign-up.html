@@ -69,6 +69,10 @@
         flex: 0 0 45%;
       }
       
+      .basf-signUp #attributeVerification .attr ul li:first-child {
+        margin-top: 0;
+      }
+      
       .basf-signUp #attributeVerification .attr ul li:nth-child(5),
       .basf-signUp #attributeVerification .attr ul li:nth-child(8),
       .basf-signUp #attributeVerification .attr ul li:nth-child(12) {
@@ -144,10 +148,11 @@
         $(".basf-signUp #api .intro>p").html("Create your BASF account");
         $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
         
-        var stateInput = $("#state");
+        var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
+        var cellInput = $("#extension_CellPhone");
         $(".buttons #continue").click(function() {
-          if(stateInput.val() == "State") {
-            $("li:nth-child(10)").append("<p>This is a required field</p>");
+          if(cellInput.val() != "cellInput.val().match(phoneNumber)") {
+            $("li:nth-child(12) .attrEntry.validate .error.itemLevel").html("Enter number in format 123-123-1234");
           };
         });
       });
