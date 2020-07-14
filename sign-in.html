@@ -5,7 +5,6 @@
     
     <style>
       body {
-        background-color: #aaa;
         margin: 0 auto;
         padding: 0;
       }
@@ -14,6 +13,7 @@
         background: #63AF00 !important;
         width: 100% !important;
         height: 78px !important;
+        margin-bottom: 16px;
       }
       
       header img {
@@ -26,17 +26,19 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 70%;
-        margin-top: 162px;
-        margin-bottom: 80px;
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+        font-family: "Helvetica Neue Light";
+        border: 2px solid seashell;
+        padding-bottom: 40px;
+        height: auto;
+        margin-bottom: 40px;
       }
       
-      span.close {
-        position: absolute;
-        top: 33.86px;
-        right: 41.87px;
-        font-size: 56px;
-        cursor: pointer;
+      .basf-signUp #api {
+        margin-left: 180px;
+        margin-right: 180px;
       }
 
       .basf-signin #api .localAccount .intro {
@@ -47,7 +49,7 @@
         font-family: "Helvetica Neue Light" !important;
         font-size: 36px !important;
         font-weight: 300 !important;
-        margin-top: 90px;
+        margin-top: 70px;
         margin-bottom: 31px;
         color: #333333;
         letter-spacing: normal;
