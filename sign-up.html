@@ -59,12 +59,25 @@
         margin: 0;
         padding: 0;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
 
       .basf-signUp #attributeVerification .attr ul li {
         list-style: none;
         margin-top: 32px;
+        flex: 0 0 45%;
+      }
+      
+      .basf-signUp #attributeVerification .attr ul li:nth-child(5),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(8),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(12) {
+        flex: 0 0 100%;
+      }
+      
+      .basf-signUp #attributeVerification .attr ul li:nth-child(10),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(11) {
+        flex: 0 0 20%;
       }
 
       .basf-signUp #attributeVerification .attr ul li .attrEntry label {
@@ -84,6 +97,34 @@
         color: #8f8f8f;
         margin-top: 5px;
         outline: none;
+      }
+      
+      .basf-signUp #attributeVerification .buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 60px;
+        margin-bottom: 0;
+      }
+
+      .basf-signUp #attributeVerification .buttons #continue {
+        color: #fff;
+        background-color: #63af00;
+        border: none;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 20px 33px;
+        cursor: pointer;
+        margin-left: 32px;
+        margin-right: -16px;
+      }
+
+      .basf-signUp #attributeVerification .buttons #cancel {
+        border: none;
+        background: none;
+        color: #60b100;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: "Helvetica Neue Regular";
       }
 
     </style>
