@@ -13,7 +13,6 @@
       }
       
       body {
-        background-color: #aaa;
         margin: 0 auto;
         padding: 0;
         text-align: left;
@@ -23,6 +22,7 @@
         background: #63AF00 !important;
         width: 100% !important;
         height: 78px !important;
+        margin-bottom: 16px;
       }
       
       header img {
@@ -35,50 +35,53 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 855px;
-        margin-top: 80px;
-        margin-bottom: 80px;
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
         font-family: "Helvetica Neue Light";
+        border: 2px solid seashell;
+        padding-bottom: 40px;
+        height: auto;
       }
-      
+
       .basf-signUp #api {
-        margin-left: 70px;
-        margin-right: 68px;
+        margin-left: 180px;
+        margin-right: 180px;
       }
-      
-      .basf-signUp #api .intro>p {
+
+      .basf-signUp #api .intro > p {
         font-family: "Helvetica Neue Light" !important;
         font-size: 36px !important;
         font-weight: 300 !important;
-        margin-top: 90px;
+        margin-top: 70px;
         margin-bottom: 31px;
         color: #333333;
         letter-spacing: normal;
         line-height: 44px;
       }
-      
+
       .basf-signUp #attributeVerification .attr ul {
         margin: 0;
         padding: 0;
       }
-      
+
       .basf-signUp #attributeVerification .attr ul li {
         list-style: none;
         margin-top: 32px;
       }
-      
+
       .basf-signUp #attributeVerification .attr ul li .attrEntry label {
         font-family: "Helvetica Neue Light" !important;
         font-size: 13px;
         line-height: 16px;
         color: #333333;
       }
-      
+
       .basf-signUp #attributeVerification .attr ul li .attrEntry .textInput,
       .basf-signUp #attributeVerification .attr ul li .attrEntry .dropdown_single {
         font-size: 18px;
-        padding: 16px 0 16px 17.45px;
-        width: 699px;
+        padding: 16px 0 16px 18px;
+        width: 100%;
         border: 1px solid #8f8f8f;
         border-top: 2px solid #8f8f8f;
         background: #f0f0f0;
@@ -86,20 +89,122 @@
         margin-top: 5px;
         outline: none;
       }
-      
+
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:first-child
+        .attrEntry
+        .textInput,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(3)
+        .attrEntry
+        .textInput,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(6)
+        .attrEntry
+        .textInput,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(9)
+        .attrEntry
+        .textInput {
+        width: 359px;
+      }
+
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(2)
+        .attrEntry
+        .textInput,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(7)
+        .attrEntry
+        .textInput {
+        width: 377px;
+      }
+
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(10)
+        .attrEntry
+        .dropdown_single,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(11)
+        .attrEntry
+        .textInput {
+        width: 160px;
+      }
+
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(4)
+        .attrEntry
+        .dropdown_single {
+        width: 399px;
+      }
+
+      .basf-signUp #attributeVerification .attr ul li:nth-child(2),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(4),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(7) {
+        position: absolute;
+        top: 10.8%;
+        left: 52%;
+      }
+
+      .basf-signUp #attributeVerification .attr ul li:nth-child(4) {
+        top: 21.3%;
+      }
+
+      .basf-signUp #attributeVerification .attr ul li:nth-child(7) {
+        top: 42.6%;
+      }
+
+      .basf-signUp #attributeVerification .attr ul li:nth-child(10),
+      .basf-signUp #attributeVerification .attr ul li:nth-child(11) {
+        position: absolute;
+        left: 52%;
+        top: 63.7%;
+      }
+
+      .basf-signUp #attributeVerification .attr ul li:nth-child(11) {
+        left: 70.7%;
+      }
+
       .attrEntry.validate .error.itemLevel.show {
         position: absolute;
         top: 41.4%;
         font-size: 12px;
       }
-      
+
       .basf-signUp #attributeVerification .buttons {
         display: flex;
         flex-direction: row-reverse;
         margin-top: 60px;
-        margin-bottom: 90px;
+        margin-bottom: 0;
       }
-      
+
       .basf-signUp #attributeVerification .buttons #continue {
         color: #fff;
         background-color: #63af00;
@@ -110,7 +215,7 @@
         cursor: pointer;
         margin-left: 64px;
       }
-      
+
       .basf-signUp #attributeVerification .buttons #cancel {
         border: none;
         background: none;
