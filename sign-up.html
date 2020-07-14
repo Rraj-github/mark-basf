@@ -207,19 +207,28 @@
         font-size: 12px;
       }
 
-      .basf-signUp #attributeVerification .attr ul li:nth-child(6) .attrEntry {
+      .basf-signUp #attributeVerification .attr ul li:nth-child(6) .attrEntry,
+      .basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry {
         position: relative;
       }
 
-      .basf-signUp #attributeVerification .attr ul li:nth-child(6) .attrEntry label {
+      .basf-signUp #attributeVerification .attr ul li:nth-child(6) .attrEntry label,
+      .basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry label {
         position: absolute;
       }
-      
+
       .basf-signUp
         #attributeVerification
         .attr
         ul
         li:nth-child(6)
+        .attrEntry
+        .textInput,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(7)
         .attrEntry
         .textInput {
         margin-top: 24px;
@@ -230,6 +239,13 @@
         .attr
         ul
         li:nth-child(6)
+        .attrEntry.validate
+        .error.itemLevel.show,
+      .basf-signUp
+        #attributeVerification
+        .attr
+        ul
+        li:nth-child(7)
         .attrEntry.validate
         .error.itemLevel.show {
         position: absolute;
