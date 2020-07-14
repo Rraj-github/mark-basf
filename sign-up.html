@@ -293,8 +293,17 @@
     </div>
     
     <script>
-      $(".basf-signUp #api .intro>p").html("Create your BASF account");
-      $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+      $(document).ready(function() {
+        $(".basf-signUp #api .intro>p").html("Create your BASF account");
+        $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+        
+        $(".buttons #continue").click(function() {
+          var stateInput = $("select#state");
+          if(stateInput.val() == "State") {
+            $(".basf-signUp #attributeVerification .attr ul li:nth-child(10) .attrEntry.validate .error.itemLevel").html("This is a required field");
+          };
+        });
+      });
     </script>
   </body>
 </html>
