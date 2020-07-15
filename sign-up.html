@@ -136,6 +136,10 @@
     <script>
       $(".basf-signUp #api .intro>p").html("Create your BASF account");
       $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+      
+      if ($("#state option:selected").text() == "State") {
+        alert("Enter State");
+      }
 
 //       var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
 //       var cellInput = $("#extension_CellPhone");
