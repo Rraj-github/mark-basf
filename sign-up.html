@@ -138,14 +138,17 @@
     </div>
     
     <script>
-      $(".basf-signUp #api .intro>p").html("Create your BASF account");
-      $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
-      
-      $(".buttons #continue").click(function() {
-        if ($("#state option:selected").text() == "State") {
-          $("li:nth-child(10) .attrEntry div").html("This information is required.");
-        };
-        alert("Button clicked.");
+      $(document).ready(function () {
+        $(".basf-signUp #api .intro>p").html("Create your BASF account");
+        $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+
+        $(".buttons #continue").click(function () {
+          debugger;
+          if ($("#state option:selected").text() == "State") {
+            $("li:nth-child(10) .attrEntry div").html("This information is required.");
+          };
+          alert("Button clicked.");
+        });
       });
 
 //       var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
