@@ -104,7 +104,8 @@
         outline: none;
       }
       
-      .basf-signUp #attributeVerification .attr ul li .attrEntry.validate .error.itemLevel.show {
+      .basf-signUp #attributeVerification .attr ul li .attrEntry.validate .error.itemLevel.show,
+      .basf-signUp #attributeVerification .attr ul li .attrEntry.validate .error.itemLevel {
         color: #D20D26;
         font-size: 12px;
         position: absolute;
@@ -121,30 +122,25 @@
       }
       
       .basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry.validate .error.itemLevel.show {
-        position: absolute;
         top: 151.5%;
       }
       
       .basf-signUp #attributeVerification .attr ul li:nth-child(6) .attrEntry.validate .error.itemLevel.show,
       .basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry.validate .error.itemLevel.show {
-        position: absolute;
         top: 181.5%;
       }
       
       .basf-signUp #attributeVerification .attr ul li:nth-child(8) .attrEntry.validate .error.itemLevel.show {
-        position: absolute;
         top: 216%;
       }
       
       .basf-signUp #attributeVerification .attr ul li:nth-child(9) .attrEntry.validate .error.itemLevel.show,
       .basf-signUp #attributeVerification .attr ul li:nth-child(10) .attrEntry.validate .error.itemLevel,
       .basf-signUp #attributeVerification .attr ul li:nth-child(11) .attrEntry.validate .error.itemLevel.show {
-        position: absolute;
         top: 246%;
       }
       
       .basf-signUp #attributeVerification .attr ul li:last-child .attrEntry.validate .error.itemLevel.show {
-        position: absolute;
         top: 280.5%;
       }
       
@@ -209,8 +205,8 @@
 
         $(".buttons #continue").click(function () {
           if ($("extension_UserType option:selected").text() == "User Type" || $("#state option:selected").text() == "State") {
-            $("#extension_UserType").parent().find(".error").html("This information is required.").css({ "font-size": "12px", "color": "#D20D26" });
-            $("#state").parent().find(".error").html("This information is required.").css({ "font-size": "12px", "color": "#D20D26" });
+            $("#extension_UserType").parent().find(".error").html("This information is required.");
+            $("#state").parent().find(".error").html("This information is required.");
           };
         });
         
