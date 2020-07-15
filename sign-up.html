@@ -226,6 +226,7 @@
         $(".buttons #continue").click(function() {
           if(cellInput.val() != "cellInput.val().match(phoneNumber)") {
             $("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
+            return false;
           };
         });
       });
