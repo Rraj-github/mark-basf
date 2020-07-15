@@ -65,6 +65,10 @@
         flex: 0 0 45%;
       }
       
+      .basf-signUp #attributeVerification .attr ul li .attrEntry a {
+        display: none;
+      }
+      
       .basf-signUp #attributeVerification .attr ul li:nth-child(5),
       .basf-signUp #attributeVerification .attr ul li:nth-child(8),
       .basf-signUp #attributeVerification .attr ul li:nth-child(12) {
@@ -138,7 +142,7 @@
       $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
       
       if ($("#state option:selected").text() == "State") {
-        alert("Enter State");
+        $("li:nth-child(10) .attrEntry div").html("This information is required.");
       }
 
 //       var phoneNumber = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i;
