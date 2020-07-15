@@ -139,14 +139,13 @@
     
     <script>
       $(document).ready(function () {
-        $(".basf-signUp #api .intro>p").html("Create your BASF account");
-        $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
+        $("#api .intro>p").html("Create your BASF account");
+        $(".buttons #cancel").html("Back");
 
         $(".buttons #continue").click(function () {
           if ($("#state option:selected").text() == "State") {
             $("#state").parent().find(".error").html("This information is required.");
           };
-          alert("Button clicked.");
         });
       });
 
@@ -154,7 +153,7 @@
 //       var cellInput = $("#extension_CellPhone");
 //       $(".buttons #continue").click(function() {
 //         if(cellInput.val() != "cellInput.val().match(phoneNumber)") {
-//           $("li:nth-child(12) .attrEntry.validate .error.itemLevel").html("Enter number in format 123-123-1234");
+//           $("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
 //         };
 //       });
     </script>
