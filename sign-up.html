@@ -213,6 +213,9 @@
       $(document).ready(function () {
         $("#api .intro>p").html("Create your BASF account");
         $(".buttons #cancel").html("Back");
+        
+        $("form#attributeVerification").attr("action", "/test");
+        $("form#attributeVerification").attr("method", "post");
 
         $(".buttons #continue").click(function () {
           if ($("extension_UserType option:selected").text() == "User Type" || $("#state option:selected").text() == "State") {
@@ -230,10 +233,11 @@
           };
         });
         
-        $(document).on('submit','form#attributeVerification',function() {
+        $(document).on('submit','form#attributeVerification',function(e) {
           console.log(cellInput.val() != cellInput.val().match(phoneNumber));
           if(cellInput.val() != cellInput.val().match(phoneNumber)) {
             $("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
+            e.preventDefault();
             return false;
           };
         });
