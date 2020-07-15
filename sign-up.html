@@ -143,9 +143,8 @@
         $(".basf-signUp #attributeVerification .buttons #cancel").html("Back");
 
         $(".buttons #continue").click(function () {
-          debugger;
           if ($("#state option:selected").text() == "State") {
-            $("li:nth-child(10) .attrEntry div").html("This information is required.");
+            $("#state").parent().find(".error").html("This information is required.");
           };
           alert("Button clicked.");
         });
