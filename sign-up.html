@@ -242,9 +242,12 @@
             return false;
           };
         });
-        var emailInput = $("#email").val();
-        var claimError = $("#claimVerificationServerError").text();
-        claimError.append(emailInput);
+        
+        $("#continue").click(function() {
+          var emailInput = $("#email").val();
+          var claimError = $("#claimVerificationServerError").text();
+          claimError.prepend(emailInput);
+        });
       });
     </script>
   </body>
