@@ -4,15 +4,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .profileUpdate-header {
+          display: flex;
+          justify-content: space-between;
+          font-family: "Helvetica Neue Roman";
+          margin-bottom: 0;
+        }
+
+        .user-name {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          color: #fff;
+          margin-right: 52px;
+        }
+
+        .gg-profile,
+        .gg-profile::after,
+        .gg-profile::before {
+         display: block;
+         box-sizing: border-box;
+         border: 2px solid;
+         border-radius: 100px;
+        }
+
+        .gg-profile {
+         overflow: hidden;
+         transform: scale(var(--ggs,1));
+         width: 22px;
+         height: 22px;
+         position: relative;
+         margin-left: 10px;
+        }
+
+        .gg-profile::after,
+        .gg-profile::before {
+         content: "";
+         position: absolute;
+         top: 2px;
+         left: 5px;
+         width: 8px;
+         height: 8px;
+        }
+
+        .gg-profile::after {
+         border-radius: 200px;
+         top: 11px;
+         left: 0px;
+         width: 18px;
+         height: 18px;
+        }
+
+        .profileUpdate-details,
+        .profileUpdate-menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #DCDCDC;
+          height: 67px;
+          font-family: "Helvetica Neue Light";
+        }
+
+        .profileUpdate-menu {
+          background-color: #65AD1E;
+          height: 45px;
+          margin-bottom: 40px;
+        }
+
+        .profileUpdate-details h1 {
+          margin-left: 50px;
+          letter-spacing: .5px;
+          color: #333333;
+        }
+
+        .profileUpdate-details .details-list,
+        .profileUpdate-menu .menu-list {
+          display: flex;
+        }
+
+        .profileUpdate-menu .menu-list {
+          margin-left: 49px;
+          padding: 0;
+        }
+
+        .profileUpdate-details .details-list .details-list-item,
+        .profileUpdate-menu .menu-list .menu-list-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          font-size: 14px;
+          margin-right: 25px;
+          cursor: pointer;
+        }
+
+        .profileUpdate-details .details-list .details-list-item:last-child {
+          margin-right: 48px;
+        }
+
+        .profileUpdate-details .details-list .details-list-item a,
+        .profileUpdate-menu .menu-list .menu-list-item a {
+          display: flex;
+          text-decoration: none;
+          color: #65AD1E;
+        }
+
+        .profileUpdate-menu .menu-list .menu-list-item a {
+          color: #fff;
+        }
+
+        .gg-info {
+          box-sizing: border-box;
+          position: relative;
+          display: block;
+          transform: scale(var(--ggs,1));
+          width: 20px;
+          height: 20px;
+          border: 2px solid;
+          border-radius: 40px;
+          margin-right: 10px;
+         }
+
+         .gg-info::after,
+         .gg-info::before {
+          content: "";
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+          border-radius: 3px;
+          width: 2px;
+          background: currentColor;
+          left: 7px;
+         }
+
+         .gg-info::after {
+          bottom: 2px;
+          height: 8px;
+         }
+
+         .gg-info::before {
+          height: 2px;
+          top: 2px;
+         } 
+
+        .gg-mail-open,
+        .gg-mail-open::after {
+         display: block;
+         box-sizing: border-box;
+         height: 14px;
+         border: 2px solid;
+        }
+
+        .gg-mail-open {
+         border-top: 0;
+         transform: scale(var(--ggs,1));
+         position: relative;
+         width: 18px;
+         border-radius: 2px;
+         margin-right: 9px;
+        }
+
+        .gg-mail-open::after {
+         content: "";
+         position: absolute;
+         border-radius: 3px;
+         width: 14px;
+         transform: rotate(-45deg);
+         bottom: 3px;
+         left: 0
+        } 
+
+        .basf-profileUpdate {
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          font-family: "Helvetica Neue Light";
+          border: 2px solid seashell;
+          height: auto;
+          margin-bottom: 240px;
+        }
+
+        .basf-profileUpdate #api {
+          margin: 0 60px;
+        }
+
+        .basf-profileUpdate #api .intro p {
+          font-size: 36px;
+          font-weight: 300 !important;
+          margin: 70px 0 31px 0;
+          color: #333333;
+          letter-spacing: normal;
+          line-height: 44px;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li {
+          list-style: none;
+          margin-top: 32px;
+          flex: 0 0 47%;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry label {
+          font-size: 13px;
+          color: #333333;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry input,
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry select {
+          font-size: 18px;
+          padding: 16px 0 16px 18px;
+          width: 100%;
+          border: 1px solid #8f8f8f;
+          border-top: 2px solid #8f8f8f;
+          background: #f0f0f0;
+          color: #8f8f8f;
+          margin-top: 5px;
+          outline: none;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry a {
+          display: none;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:first-child,
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(2) {
+          margin-top: 0;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(5),
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(6) {
+          flex: 0 0 100%;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(8) {
+          flex: 0 0 15%;
+          margin-left: 20px;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(9) {
+          flex: 0 0 27%;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:last-child {
+          flex: 0 0 100%;
+        }
+
+        .basf-profileUpdate #attributeVerification .buttons {
+          margin-top: 60px;
+          margin-bottom: 91px;
+        }
+
+        .basf-profileUpdate #attributeVerification #continue {
+          font-family: "Helvetica Neue Roman";
+          color: #fff;
+          background-color: #63af00;
+          border: none;
+          font-size: 16px;
+          line-height: 18px;
+          padding: 20px 33px;
+          cursor: pointer;
+        }
+
+        .basf-profileUpdate #attributeVerification #cancel {
+          font-family: "Helvetica Neue Roman";
+          border: none;
+          background: none;
+          color: #60b100;
+          font-size: 16px;
+          line-height: 18px;
+          margin-left: 29px;
+        }
+    </style>
     <title>Profile Update</title>
 </head>
 
 <body>
+     <header class="profileUpdate-header">
+        <img src="https://raw.githubusercontent.com/Rraj-github/mark-basf/master/BASFo_wh100lg_3c.jpg" />
+        <div class="user-name">
+            <a href="#"></a>Jane Doe <i class="gg-profile"></i></div>
+        </div>
+    </header>
 
+    <div class="profileUpdate-details">
+        <h1>Account Profile</h1>
+        <ul class="details-list">
+            <li class="details-list-item">
+                <a href="#"><i class="gg-info"></i> Help Center</a>
+            </li>
+            <li class="details-list-item">
+                <a href="#"><i class="gg-mail-open"></i> Contact us</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="profileUpdate-menu">
+        <ul class="menu-list">
+            <li class="menu-list-item">
+                <a href="#">My Account</a>
+            </li>
+            <li class="menu-list-item">
+                <a href="#">My Order Plans</a>
+            </li>
+        </ul>
+    </div>
+    
     <div class="basf-profileUpdate">
         <div id="api">
         </div>
     </div>
+    
+    <script>
+        $(document).ready(function () {
+            $(".basf-profileUpdate #api .intro p").html("My Details");
+        });
+    </script>
 
 </body>
 
