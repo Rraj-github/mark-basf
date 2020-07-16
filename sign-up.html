@@ -242,7 +242,9 @@
             return false;
           };
         });
-        $("#claimVerificationServerError").text().prepend("$("#email").val()");
+        var emailInput = $("#email").val();
+        var claimError = $("#claimVerificationServerError").text();
+        claimError.prepend(emailInput);
       });
     </script>
   </body>
