@@ -242,6 +242,10 @@
             return false;
           };
         });
+        
+        if($("#claimVerificationServerError").css("display", "block")) {
+          $("#claimVerificationServerError").text().prepend("<span>$("#email").val()</span>");
+        };
       });
     </script>
   </body>
