@@ -243,12 +243,43 @@
           };
         });
         
-        $("#continue").click(function() {
-          var emailInput = $("#email").val();
-          var claimError = $("#claimVerificationServerError").text();
-          claimError.prepend("sfsefsf");
-        });
-      });
+//         $("#continue").click(function() {
+//           var emailInput = $("#email").val();
+//           var claimError = $("#claimVerificationServerError").text();
+//           claimError.prepend("sfsefsf");
+//         });
+//       });
+        
+        function emailExistsObserver() {
+          //Select the node that will be observed for mutation
+          var emailExists = document.querySelector("#claimVerificationServerError");
+
+          var config = { attributes: true, childList: true, subtree: true };
+
+          // Callback function to execute when mutations are observed
+          var Callback = function(mutationsList, observer) {
+          // Use traditional 'for loops' for IE 11
+          for(let mutation of mutationsList) {
+            if (mutation.type === 'attributes') {
+              if(mutation.attributeName == 'aria-hidden') {
+                if (mutation.target.getAttribute(mutation.attributeName) == "false") {
+                    var emailInput = $("#email").val();
+                    var claimError = $("#claimVerificationServerError").text();
+                    claimError.prepend("sfsefsf");
+                }
+              }
+            }
+          };
+
+          // Create an observer instance linked to the callback function
+          var observer = new MutationObserver(Callback);
+
+          // Start observing the target node for configured mutations
+          observer.observe(emailExists, config);
+          }
+        }
+                        
+                        emailExistsObserver();
     </script>
   </body>
 </html>
