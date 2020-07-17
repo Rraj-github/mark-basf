@@ -255,6 +255,7 @@
         function emailExistsObserver() {
           /* Select the node that will be observed for mutation */
           var emailExists = document.getElementById("claimVerificationServerError");
+          console.log(emailExists);
 
           var config = { attributes: true, childList: true, subtree: true };
 
