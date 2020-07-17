@@ -266,9 +266,9 @@
                 if (mutation.attributeName == "aria-hidden") {
                   if (mutation.target.getAttribute(mutation.attributeName) == "false") {
                     var emailInput = $("#email").val();
-                    $("#claimVerificationServerError").html(
-                      emailInput + "is already registered. Please try log in or try another email."
-                    );
+                    var claimError = $("#claimVerificationServerError").html();
+                    var res = emailInput + claimError;
+                    console.log(res);
                   }
                 }
               }
