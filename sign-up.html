@@ -261,6 +261,7 @@
 
           /* Callback function to execute when mutations are observed */
           var callback = function (mutationsList, observer) {
+            console.log("Testing");
             /* Use traditional 'for loops' for IE 11 */
             for (let mutation of mutationsList) {
               if (mutation.type === "attributes") {
