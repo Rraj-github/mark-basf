@@ -264,6 +264,7 @@
             for (let mutation of mutationsList) {
               if (mutation.type === "attributes") {
                 if (mutation.attributeName == "aria-hidden") {
+                  console.log(mutation.target);
                   if (mutation.target.getAttribute(mutation.attributeName) == "false") {
                     debugger;
                     var emailInput = $("#email").val();
