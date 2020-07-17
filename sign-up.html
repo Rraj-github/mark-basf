@@ -252,43 +252,46 @@
        });
 */
         
-        function emailExistsObserver() {
-          /* Select the node that will be observed for mutation */
-          var emailExists = document.getElementById("claimVerificationServerError");
-          console.log(emailExists);
+//         function emailExistsObserver() {
+//           /* Select the node that will be observed for mutation */
+//           var emailExists = document.getElementById("claimVerificationServerError");
+//           console.log(emailExists);
 
-          var config = { attributes: true, childList: true, subtree: true };
+//           var config = { attributes: true, childList: true, subtree: true };
 
-          /* Callback function to execute when mutations are observed */
-          var callback = function (mutationsList, observer) {
-            console.log("Testing");
-            /* Use traditional 'for loops' for IE 11 */
-            for (let mutation of mutationsList) {
-              if (mutation.type === "attributes") {
-                if (mutation.attributeName == "aria-hidden") {
-                  console.log(mutation.target);
-                  if (mutation.target.getAttribute(mutation.attributeName) == "false") {
-                    debugger;
-                    var emailInput = $("#email").val();
-                    var claimError = $("#claimVerificationServerError").html();
-                    var res = emailInput + claimError;
-                    console.log(res);
-                  }
-                }
-              }
-            }
+//           /* Callback function to execute when mutations are observed */
+//           var callback = function (mutationsList, observer) {
+//             console.log("Testing");
+//             /* Use traditional 'for loops' for IE 11 */
+//             for (let mutation of mutationsList) {
+//               if (mutation.type === "attributes") {
+//                 if (mutation.attributeName == "aria-hidden") {
+//                   console.log(mutation.target);
+//                   if (mutation.target.getAttribute(mutation.attributeName) == "false") {
+//                     debugger;
+//                     var emailInput = $("#email").val();
+//                     var claimError = $("#claimVerificationServerError").html();
+//                     var res = emailInput + claimError;
+//                     console.log(res);
+//                   }
+//                 }
+//               }
+//             }
 
-            /* Create an observer instance linked to the callback function */
-            var observer = new MutationObserver(callback);
+//             /* Create an observer instance linked to the callback function */
+//             var observer = new MutationObserver(callback);
 
-            /* Start observing the target node for configured mutations */
-            observer.observe(emailExists, config);
-          };
-        }
+//             /* Start observing the target node for configured mutations */
+//             observer.observe(emailExists, config);
+//           };
+//         }
 
 //         emailExistsObserver();
       
-      $("#continue").click(emailExistsObserver);
+      $("#continue").click(function() {
+        var emailInput = $("#email").val();
+        $("#claimVerificationServerError").html(emailInput + " is already registered.");
+      });
     </script>
   </body>
 </html>
