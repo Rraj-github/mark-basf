@@ -265,6 +265,7 @@
               if (mutation.type === "attributes") {
                 if (mutation.attributeName == "aria-hidden") {
                   if (mutation.target.getAttribute(mutation.attributeName) == "false") {
+                    debugger;
                     var emailInput = $("#email").val();
                     var claimError = $("#claimVerificationServerError").html();
                     var res = emailInput + claimError;
