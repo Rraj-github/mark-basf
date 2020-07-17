@@ -290,8 +290,11 @@
       
         $("#continue").click(function() {
           var emailInput = $("#email").val();
-          $("#claimVerificationServerError").html(emailInput + " is already registered.");
-          console.log("Testing");
+          console.log(emailInput);
+          setTimeout(function() {
+            $("#claimVerificationServerError").html(emailInput + " is already registered.");
+            console.log("Timeout Testing");
+          }, 2000);
         });
     </script>
   </body>
