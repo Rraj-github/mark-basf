@@ -292,7 +292,7 @@
           var emailInput = $("#email").val();
           console.log(emailInput);
           setTimeout(function() {
-            $("#claimVerificationServerError").html(emailInput + " is already registered.");
+            $("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
             console.log("Timeout Testing");
           }, 5000);
         });
