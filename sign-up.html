@@ -288,8 +288,8 @@
 
 //         emailExistsObserver();
       
-        var emailInput = $("#email").val();
-        emailInput.addEventListener("click", function() {
+        $("#continue").click(function() {
+          var emailInput = $("#email").val();
           $("#claimVerificationServerError").html(emailInput + " is already registered.");
           console.log("Testing");
         });
