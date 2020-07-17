@@ -253,26 +253,30 @@
         function emailExistsObserver() {
           //Select the node that will be observed for mutation
           var emailExists = document.querySelector("#claimVerificationServerError");
+          console.log(emailExists);
 
           var config = { attributes: true, childList: true, subtree: true };
 
           // Callback function to execute when mutations are observed
-          var Callback = function(mutationsList, observer) {
+          var callback = function(mutationsList, observer) {
           // Use traditional 'for loops' for IE 11
           for(let mutation of mutationsList) {
             if (mutation.type === 'attributes') {
               if(mutation.attributeName == 'aria-hidden') {
                 if (mutation.target.getAttribute(mutation.attributeName) == "false") {
                     var emailInput = $("#email").val();
+                  console.log(emailInput);
                     var claimError = $("#claimVerificationServerError").text();
-                    claimError.prepend("sfsefsf");
+                  console.log(claimError);
+                    claimError.html(emailInput + "  is already registered. Please try log in or try another email.");
+                  console.log(claimError);
                 }
               }
             }
           };
 
           // Create an observer instance linked to the callback function
-          var observer = new MutationObserver(Callback);
+          var observer = new MutationObserver(callback);
 
           // Start observing the target node for configured mutations
           observer.observe(emailExists, config);
