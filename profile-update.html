@@ -306,6 +306,16 @@
           font-size: 14px;
           color: #D20D26;
         }
+      
+      .basf-signUp #attributeVerification .attr ul li .attrEntry a {
+        font-size: 12px;
+				text-decoration: none;
+				color: #D20D26;
+      }
+      
+      .basf-signUp #attributeVerification .attr ul li .attrEntry a .error.itemLevel:not(:first-child) {
+        display: none;
+      }
     </style>
     <title>Profile Update</title>
 </head>
@@ -349,7 +359,8 @@
     <script>
         $(document).ready(function () {
             $(".basf-profileUpdate #api .intro p").html("My Details");
-            $(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").html(" ");
+            $(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").html("");
+            $("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a");
         });
     </script>
 
