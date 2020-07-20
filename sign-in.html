@@ -32,15 +32,13 @@
       }
       
       .basf-signin #api {
-        margin-left: 200px;
-        margin-right: 200px;
+        margin: 0 200px;
       }
 
       .basf-signin #api .localAccount .intro h2 {
         font-size: 36px !important;
         font-weight: 300 !important;
-        margin-top: 70px;
-        margin-bottom: 31px;
+        margin: 70px 0 31px;
         color: #333333;
         letter-spacing: normal;
         line-height: 44px;
@@ -132,6 +130,21 @@
       
       .basf-signin #api .localAccount .create>p>a {
         display: none !important;
+      }
+      
+      /* Media Queries */
+      /* Mobile */
+      @media (max-width: 767px) {
+        .basf-signin #api {
+          margin: 0 100px;
+        }
+      }
+      
+      /* Tablet */
+      @media (max-width: 991px) and (min-width: 768px) {
+        .basf-signin #api {
+          margin: 0 100px;
+        }
       }
     </style>
   </head>
