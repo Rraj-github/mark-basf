@@ -299,34 +299,10 @@
         .basf-profileUpdate #api #attributeVerification ul li.TextBox .attrEntry.validate .error.itemLevel.show {
           color: #D20D26;
           font-size: 12px;
-          position: absolute;
-        }
-        
-        .basf-profileUpdate #attributeVerification .attr ul li:first-child .attrEntry.validate .error.itemLevel.show,
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(2) .attrEntry.validate .error.itemLevel.show {
-          top: 68.5%;
-        }
-
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(3) .attrEntry.validate .error.itemLevel.show {
-          top: 85%;
-        }
-
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(6) .attrEntry.validate .error.itemLevel.show {
-          top: 118.5%;
-        }
-        
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(7) .attrEntry.validate .error.itemLevel.show,
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(9) .attrEntry.validate .error.itemLevel {
-          top: 135%;
-        }
-        
-        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(10) .attrEntry.validate .error.itemLevel.show {
-          top: 151.5%;
         }
         
         .basf-profileUpdate #api #attributeVerification #requiredFieldMissing {
           position: absolute;
-          top: 52.5%;
           font-size: 14px;
           color: #D20D26;
         }
@@ -373,6 +349,7 @@
     <script>
         $(document).ready(function () {
             $(".basf-profileUpdate #api .intro p").html("My Details");
+            $(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").html(" ");
         });
     </script>
 
