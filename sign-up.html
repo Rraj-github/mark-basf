@@ -119,6 +119,10 @@
         color: #D20D26;
 				margin-bottom: 16px;
 			}
+			
+			.basf-signUp #attributeVerification #passwordEntryMismatch {
+				width: 360px;
+			}
       
       .basf-signUp #attributeVerification .buttons {
         display: flex;
@@ -227,7 +231,8 @@
         });
         
         $("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry a");
-	$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry a");
+				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry a");
+				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry a");
       });
         
         var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
