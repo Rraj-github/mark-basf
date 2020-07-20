@@ -160,6 +160,39 @@
       .basf-signUp #attributeVerification .attr ul li .attrEntry a .error.itemLevel:not(:first-child) {
         display: none;
       }
+			
+			/* Media Queries */
+			/* Mobile Layout*/
+			@media (max-width: 767px) {
+				.basf-signUp #api {
+						margin: 0 16px;
+				}
+				
+				.basf-signUp #api .intro > p {
+					margin-top: 40px;
+					margin-bottom: 20px;
+					font-size: 28px !important;
+				}
+				
+				.basf-signUp #api #attributeList {
+					margin-right: 16px;
+				}
+				
+				.basf-signUp #attributeVerification .attr ul li {
+					flex: 0 0 100%;
+					margin-top: 0;
+    			margin-bottom: 24px;
+				}
+				
+				.basf-signUp #attributeVerification .attr ul li.DropdownSingleSelect,
+      	.basf-signUp #attributeVerification .attr ul li.DropdownSingleSelect{
+					flex: 0 0 47%;
+				}
+				
+				.basf-signUp #attributeVerification .buttons {
+					margin: 40px 16px 48px 0;
+				}
+			}
 
     </style>
   </head>
