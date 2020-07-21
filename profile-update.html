@@ -480,9 +480,13 @@
 				
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").attr("tabindex" , -1);
 				
-				$('#cancel').click(function(){
-					 window.location.href='https://www.google.com/';
-				});
+				$('#ButtonName').attr('onClick', 'redirect();');
+				
+				function redirect() {
+					$('#cancel').click(function(){
+							window.location='https://www.google.com/';
+					});	
+				};
 			});
     </script>
 
