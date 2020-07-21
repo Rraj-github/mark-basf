@@ -421,7 +421,7 @@
      <header class="profileUpdate-header">
         <img src="https://raw.githubusercontent.com/Rraj-github/mark-basf/master/BASFo_wh100lg_3c.jpg" />
         <div class="user-name">
-            <a href="#"></a>Jane Doe <i class="gg-profile"></i></div>
+            <a href="#">Jane Doe <i class="gg-profile"></i></a></div>
         </div>
     </header>
 
@@ -454,11 +454,15 @@
     </div>
     
     <script>
-        $(document).ready(function () {
-            $(".basf-profileUpdate #api .intro p").html("My Details");
-						$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
-            $("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a");
-        });
+			$(document).ready(function () {
+				var firstName = $("#givenName").val();
+				var lastName = $("#surname").val();
+				$("user-name a").text(firstName + " " + lastName);
+				
+				$(".basf-profileUpdate #api .intro p").html("My Details");
+				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
+				$("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a");
+			});
     </script>
 
 </body>
