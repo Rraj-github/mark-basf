@@ -313,7 +313,81 @@
       .basf-profileUpdate #attributeVerification .attr ul li .attrEntry a .error.itemLevel:not(:first-child) {
         display: none;
       }
-    </style>
+			
+			/* Media Queries */
+			/* Mobile Layout*/
+			@media (max-width: 767px) {
+				.profileUpdate-header img {
+					margin: 0;
+				}
+				
+				.user-name {
+					margin-right: 16px;
+				}
+				
+				.profileUpdate-details h1 {
+					font-size: 20px;
+    			margin-left: 16px;
+				}
+				
+				.profileUpdate-details .details-list .details-list-item {
+					margin-right: 16px;
+    			font-size: 12px;
+				}
+				
+				.profileUpdate-details .details-list .details-list-item a {
+					flex-direction: column;
+    			text-align: center;
+				}
+				
+				.gg-info {
+					margin: 0 auto 5px;
+				}
+				
+				.gg-mail-open {
+					margin: 5px auto 3px;
+				}
+				
+				.profileUpdate-menu .menu-list {
+					margin-left: 16px;
+				}
+				
+				.basf-profileUpdate {
+					margin-right: 16px;
+					margin-left: 16px;
+				}
+				
+				.basf-profileUpdate #api {
+					margin: 0 16px;
+				}
+				
+				.basf-profileUpdate #api .intro p {
+					font-size: 26px;
+					margin: 32px 0 32px;
+					line-height: normal;
+				}
+				
+				.basf-profileUpdate #attributeVerification .buttons {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					margin-top: 32px;
+					margin-bottom: 64px;
+				}
+				
+				.basf-profileUpdate #attributeVerification #continue {
+					padding: 16px 20px;
+					font-size: 14px;
+					line-height: normal;
+				}
+				
+				.basf-profileUpdate #attributeVerification #cancel {
+    			margin-top: 24px;
+					margin-left: 0;
+				}
+			}
+		</style>
     <title>Profile Update</title>
 </head>
 
