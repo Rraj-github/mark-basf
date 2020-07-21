@@ -430,9 +430,9 @@
         <div class="user-name">
             <a href="#">
 							Jane Doe 
-							
+							<span>
 								<i class="gg-profile"></i>
-							
+							</span>
 						</a>
 			 	</div>
         </div>
@@ -470,7 +470,7 @@
 			$(document).ready(function () {
 				var firstName = $("#givenName").val();
 				var lastName = $("#surname").val();
-				$(".user-name a").html(firstName + " " + lastName);
+// 				$(".user-name a").html(firstName + " " + lastName);
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
