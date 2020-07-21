@@ -87,7 +87,7 @@
       }
 			
 			.basf-signUp #attributeVerification .attr ul li:nth-child(10) {
-				margin-right: -16px;
+			margin-right: -16px;
 			}
 
       .basf-signUp #attributeVerification .attr ul li .attrEntry label {
@@ -254,39 +254,37 @@
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
       });
         
-        var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        var cellInput = $("#extension_CellPhone");
-        $(".buttons #continue").click(function() {
-          if(cellInput.val() != cellInput.val().match(phoneNumber)) {
-            $("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
-            return false;
-          };
-        });
-        
-        $(document).on('submit','form#attributeVerification',function(e) {
-          console.log(cellInput.val() != cellInput.val().match(phoneNumber));
-          if(cellInput.val() != cellInput.val().match(phoneNumber)) {
-            $("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
-            e.preventDefault();
-            return false;
-          };
-        });
-      
-        $("#continue").click(function() {
-          var emailInput = $("#email").val();
-          setTimeout(function() {
-            $("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
-          }, 3000);
-        });
+// 			var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+// 			var cellInput = $("#extension_CellPhone");
+// 			$(".buttons #continue").click(function() {
+// 				if(cellInput.val() != cellInput.val().match(phoneNumber)) {
+// 					$("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
+// 					return false;
+// 				};
+// 			});
 
-	$("#fieldIncorrect").removeAttr("tabindex");
-	$("#passwordEntryMismatch").removeAttr("tabindex");
-	
-	if($("#requiredFieldMissing").attr('aria-hidden') == "false") {
-	   $("#requiredFieldMissing").removeAttr("tabindex");
-	}
-			
-				
-    </script>
+// 			$(document).on('submit','form#attributeVerification',function(e) {
+// 				console.log(cellInput.val() != cellInput.val().match(phoneNumber));
+// 				if(cellInput.val() != cellInput.val().match(phoneNumber)) {
+// 					$("#extension_CellPhone").parent().find(".error").html("Enter number in '123-123-1234' format.");
+// 					e.preventDefault();
+// 					return false;
+// 				};
+// 			});
+
+			$("#continue").click(function() {
+				var emailInput = $("#email").val();
+				setTimeout(function() {
+					$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
+				}, 3000);
+			});
+
+			$("#fieldIncorrect").removeAttr("tabindex");
+			$("#passwordEntryMismatch").removeAttr("tabindex");
+
+			if($("#requiredFieldMissing").attr('aria-hidden') == "false") {
+				 $("#requiredFieldMissing").removeAttr("tabindex");
+			}				
+		</script>
   </body>
 </html>
