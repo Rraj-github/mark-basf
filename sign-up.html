@@ -238,17 +238,6 @@
       $(document).ready(function () {
         $("#api .intro>p").html("Create your BASF account");
         $(".buttons #cancel").html("Back");
-        
-        $("form#attributeVerification").attr("action", "/test");
-        $("form#attributeVerification").attr("method", "post");
-
-        $(".buttons #continue").click(function () {
-          if ($("extension_UserType option:selected").text() == "User Type" || $("#state option:selected").text() == "State") {
-            $("#extension_UserType").parent().find(".error").html("This information is required.");
-            $("#state").parent().find(".error").html("This information is required.");
-          };
-        });
-        
         $("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
 				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry");
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
