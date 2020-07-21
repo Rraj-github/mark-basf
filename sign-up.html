@@ -271,10 +271,6 @@
             return false;
           };
         });
-			
-				$(".basf-signUp #attributeVerification #requiredFieldMissing").attr("tabindex" , -1);
-				$(".basf-signUp #attributeVerification #fieldIncorrect").attr("tabindex" , -1);
-				$(".basf-signUp #attributeVerification #passwordEntryMismatch").attr("tabindex" , -1);
       
         $("#continue").click(function() {
           var emailInput = $("#email").val();
@@ -282,6 +278,10 @@
             $("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
           }, 3500);
         });
+			
+				$("#requiredFieldMissing").removeAttr("role");
+				$("#fieldIncorrect").removeAttr("role");
+				$("#passwordEntryMismatch").removeAttr("role");
     </script>
   </body>
 </html>
