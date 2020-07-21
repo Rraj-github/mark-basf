@@ -277,11 +277,14 @@
           setTimeout(function() {
             $("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
           }, 3000);
-					
-					$("#requiredFieldMissing").removeAttr("tabindex");
-					$("#fieldIncorrect").removeAttr("tabindex");
-					$("#passwordEntryMismatch").removeAttr("tabindex");
         });
+
+	$("#fieldIncorrect").removeAttr("tabindex");
+	$("#passwordEntryMismatch").removeAttr("tabindex");
+	
+	if($("#requiredFieldMissing").attr('aria-hidden') == "false") {
+	   $("#requiredFieldMissing").removeAttr("tabindex");
+	}
 			
 				
     </script>
