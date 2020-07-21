@@ -154,14 +154,12 @@
         font-size: 14px;
         color: #D20D26;
       }
+			
+			.basf-signUp #attributeVerification .attr ul li .attrEntry a {
+				display: none;
+			}
       
-      .basf-signUp #attributeVerification .attr ul li .attrEntry a {
-        font-size: 12px;
-				text-decoration: none;
-				color: #D20D26;
-      }
-      
-      .basf-signUp #attributeVerification .attr ul li .attrEntry a .error.itemLevel:not(:first-child) {
+      .basf-signUp #attributeVerification .attr ul li .attrEntry .error.itemLevel:not(:nth-of-type(1)) {
         display: none;
       }
 			
@@ -244,9 +242,9 @@
           };
         });
         
-        $("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry a");
-				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry a");
-				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry a");
+        $("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
+				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry");
+				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
       });
         
         var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
