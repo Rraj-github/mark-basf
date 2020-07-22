@@ -107,7 +107,13 @@
         color: #8f8f8f;
         margin-top: 5px;
         outline: none;
+				display: flex !important;
+				flex-direction: column;
       }
+			
+			.basf-signUp #attributeVerification .attr ul li .attrEntry .itemLevel {
+				order: 4
+			}
       
       .basf-signUp #attributeVerification .attr ul li .attrEntry.validate .error.itemLevel.show,
       .basf-signUp #attributeVerification .attr ul li .attrEntry.validate .error.itemLevel {
@@ -238,7 +244,7 @@
       $(document).ready(function () {
         $("#api .intro>p").html("Create your BASF account");
         $(".buttons #cancel").html("Back");
-        $(".itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
+//         $(".itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
 				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry");
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
       });
