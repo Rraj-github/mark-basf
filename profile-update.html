@@ -30,6 +30,7 @@
           align-items: center;
           font-size: 14px;
           margin-right: 52px;
+					text-transform: capitalize;
         }
 			
 				.user-name a {
@@ -166,10 +167,6 @@
 					margin-top: 29px;
 					margin-bottom: 53px;
 					padding: 20px 0;
-				}
-
-				.user-name:hover + .profile-menu-container {
-					display: block;
 				}
 
         .profileUpdate-details,
@@ -627,6 +624,10 @@
 				var emailId = $("#extension_VerifiedEmail").val();
 				$(".user-name .user-name-cta").text(firstName + " " + lastName);
 				$(".user-email-cta").text(emailId);
+				
+				$(".user-name-hover").click(function () {
+					$(".profile-menu-container").toggle();
+				});
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
