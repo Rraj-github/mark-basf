@@ -310,15 +310,17 @@
 			.basf-profileUpdate #attributeVerification .attr ul li .attrEntry a {
 				display: none;
 			}
+			
+			.basf-profileUpdate #attributeVerification .attr ul li .attrEntry {
+				display: flex !important;
+				flex-direction: column;
+			}
       
       .basf-profileUpdate #attributeVerification .attr ul li .attrEntry .error.itemLevel {
         font-size: 12px;
 				text-decoration: none;
 				color: #D20D26;
-      }
-      
-      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry .error.itemLevel:not(:nth-of-type(1)) {
-        display: none;
+				order: 4;
       }
 			
 			/* Media Queries */
@@ -475,9 +477,7 @@
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
-				$("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry");
-				
-				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").attr("tabindex" , -1);
+// 				$("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry");
 				
 				$('button#cancel').attr('onClick', 'redirect()');
 				
