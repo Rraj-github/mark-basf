@@ -238,7 +238,7 @@
       $(document).ready(function () {
         $("#api .intro>p").html("Create your BASF account");
         $(".buttons #cancel").html("Back");
-//         $("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
+        $(".itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
 				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry");
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
       });
@@ -250,10 +250,10 @@
 				 $("#requiredFieldMissing").removeAttr("tabindex");
 			}
 			
-			var listItems = $("li");
-			for(i=0; i<listItems.length; i++) {
-				$("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
-			}
+// 			var listItems = $("li");
+// 			for(i=0; i<listItems.length; i++) {
+// 				$("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
+// 			}
 			
 			function emailExistsObserver() {
 					// Select the node that will be observed for mutations
