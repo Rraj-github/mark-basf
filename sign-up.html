@@ -247,22 +247,56 @@
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
       });
 
-			$("#continue").click(function() {
-				var emailInput = $("#email").val();
-				if($("#claimVerificationServerError").attr('aria-hidden')=="false") {
-					$("li:nth-child(5) .attrEntry.validate").append("<p> This is a test message. </p>");
-				}
-// 				setTimeout(function() {
-// 					$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
-// 				}, 3000);
-			});
+// 			$("#continue").click(function() {
+// 				var emailInput = $("#email").val();
+// 				if($("#claimVerificationServerError").attr('aria-hidden')=="false") {
+// 					$("li:nth-child(5) .attrEntry.validate").append("<p> This is a test message. </p>");
+// 				}
+// // 				setTimeout(function() {
+// // 					$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
+// // 				}, 3000);
+// 			});
 
 			$("#fieldIncorrect").removeAttr("tabindex");
 			$("#passwordEntryMismatch").removeAttr("tabindex");
 
 			if($("#requiredFieldMissing").attr('aria-hidden') == "false") {
 				 $("#requiredFieldMissing").removeAttr("tabindex");
-			}				
+			}
+			
+			function emailExistsObserver() {
+					// Select the node that will be observed for mutations
+					var emailExists = document.getElementById("claimVerificationServerError");
+
+					// Options for the observer (which mutations to observe)
+					var config = { attributes: true, childList: true, subtree: true };
+
+					// Callback function to execute when mutations are observed
+					var callback = function (mutationsList, observer) {
+						var emailInput = $("#email").val();
+						// Use traditional 'for loops' for IE 11
+						for (let mutation of mutationsList) {
+							if (mutation.type === "attributes") {
+								if (mutation.attributeName == "aria-hidden") {
+									if (mutation.target.getAttribute(mutation.attributeName) == "true") {
+									} else if ( mutation.target.getAttribute(mutation.attributeName) == "false") {
+// 											$("li:nth-child(5) .attrEntry.validate").append("<p> This is a test message. </p>");
+											$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
+											console.log(emailInput);
+									}
+								}
+							}
+						}
+					};
+
+					// Create an observer instance linked to the callback function
+					var observer = new MutationObserver(callback);
+
+					// Start observing the target node for configured mutations
+					observer.observe(emailExists, config);
+				}
+			
+				emailExistsObserver();
 		</script>
   </body>
 </html>
