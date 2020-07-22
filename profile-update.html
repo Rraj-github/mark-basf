@@ -75,6 +75,102 @@
          width: 18px;
          height: 18px;
         }
+				
+				.profile-menu-container {
+					position: absolute;
+					top: 60px;
+					right: 20px;
+					background: #fff;
+					border-radius: 4px;
+					border: 2px solid seashell;
+					overflow: hidden;
+					z-index: 10;
+					font-family: "Helvetica Neue Light";
+					display: none;
+				}
+
+				.profile-menu-block {
+					margin: 0 29px;
+				}
+
+				.profile-menu-block .user-name {
+					display: block;
+					margin-right: 0;
+				}
+
+				.profile-menu-block .user-name .user-name-cta {
+					color: #333;
+					font-size: 32px;
+					line-height: 39px;
+					margin-top: 37.93px;
+					margin-bottom: 14px;
+				}
+
+				.profile-menu-block .user-name .user-email-cta {
+					color: #828282;
+					font-size: 24px;
+					line-height: 29px;
+					margin-bottom: 22px;
+					text-transform: none;
+				}
+
+				.profile-menu-block hr {
+					border: 1px solid #bebebe;
+				}
+
+				.profile-menu-cta {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					font-size: 18px;
+					line-height: 22px;
+				}
+
+				.profile-menu-cta a {
+					text-decoration: none;
+					color: #828282;
+					background-color: #f0f0f0;
+					text-align: center;
+				}
+
+				.profile-menu-cta .myAccount-cta {
+					padding: 13px 120px 12px;
+					margin-bottom: 22px;
+					margin-top: 16px;
+				}
+
+				.profile-menu-cta .myOrder-cta {
+					margin-bottom: 22px;
+					padding: 12px 107px 12px;
+				}
+
+				.logout-block {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					font-size: 16px;
+					line-height: 22px;
+				}
+
+				.logout-block a {
+					text-decoration: none;
+					text-align: center;
+					color: #fff;
+					background: #63af00;
+					width: 100%;
+				}
+
+				.logout-block .logout-cta {
+					margin-top: 29px;
+					margin-bottom: 53px;
+					padding: 20px 0;
+				}
+
+				.user-name:hover + .profile-menu-container {
+					display: block;
+				}
 
         .profileUpdate-details,
         .profileUpdate-menu {
@@ -361,6 +457,44 @@
 					margin-left: 16px;
 				}
 				
+				.profile-menu-container {
+					top: 64px;
+					right: 0;
+				}
+
+				.profile-menu-block .user-name .user-name-cta {
+					font-size: 28px;
+					line-height: 32px;
+					margin-top: 26px;
+					margin-bottom: 12px;
+				}
+
+				.profile-menu-block .user-name .user-email-cta {
+					font-size: 20px;
+					line-height: 24px;
+					margin-bottom: 16px;
+				}
+
+				.profile-menu-cta {
+					font-size: 14px;
+					line-height: 18px;
+				}
+
+				.profile-menu-cta .myAccount-cta {
+					margin-bottom: 18px;
+					margin-top: 14px;
+				}
+
+				.profile-menu-cta .myOrder-cta {
+					margin-bottom: 18px;
+				}
+
+				.logout-block .logout-cta {
+					margin-top: 22px;
+					margin-bottom: 44px;
+					padding: 18px 0;
+				}
+				
 				.basf-profileUpdate {
 					margin-right: 16px;
 					margin-left: 16px;
@@ -439,6 +573,23 @@
 					<a href="#" class="user-name-cta">Jane Doe</a>
 					<a href="#" class="user-icon-cta"><i class="gg-profile"></i></a>
 			 	</div>
+				<div class="profile-menu-container">
+					<div class="profile-menu-block">
+						<div class="user-name">
+							<a href="#" class="user-name-cta">Jane Doe</a>
+							<a href="#" class="user-email-cta"></a>
+						</div>
+						<hr />
+						<div class="profile-menu-cta">
+							<a href="#" class="myAccount-cta">My Account</a>
+							<a href="#" class="myOrder-cta">My Order Plans</a>
+						</div>
+						<hr />
+						<div class="logout-block">
+							<a href="#" class="logout-cta">Sign Out</a>
+						</div>
+					</div>
+				</div>
     </header>
 
     <div class="profileUpdate-details">
@@ -473,11 +624,12 @@
 			$(document).ready(function () {
 				var firstName = $("#givenName").val();
 				var lastName = $("#surname").val();
+				var emailId = $("#extension_VerifiedEmail").val();
 				$(".user-name .user-name-cta").text(firstName + " " + lastName);
+				$(".user-email-cta").text(emailId);
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
-// 				$("div.error.itemLevel").detach().appendTo(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry");
 				
 				$('button#cancel').attr('onClick', 'redirect()');
 				
