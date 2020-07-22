@@ -250,19 +250,15 @@
 //         $(".itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
 				$("#claimVerificationServerError").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(5) .attrEntry");
 				$("#passwordEntryMismatch").detach().appendTo(".basf-signUp #attributeVerification .attr ul li:nth-child(7) .attrEntry");
+				
+				$(".buttons #continue").click(function () {
+						if ($("extension_UserType option:selected").text() == "User Type" || $("#state option:selected").text() == "State") {
+							$("#extension_UserType").parent().find(".error").html("This information is required.");
+							$("#state").parent().find(".error").html("This information is required.");
+						}
+					});
+				});
       });
-
-			$("#fieldIncorrect").removeAttr("tabindex");
-			$("#passwordEntryMismatch").removeAttr("tabindex");
-
-			if($("#requiredFieldMissing").attr('aria-hidden') == "false") {
-				 $("#requiredFieldMissing").removeAttr("tabindex");
-			}
-			
-// 			var listItems = $("li");
-// 			for(i=0; i<listItems.length; i++) {
-// 				$("div.error.itemLevel").detach().appendTo(".basf-signUp #attributeVerification .attr ul li .attrEntry");
-// 			}
 			
 			function emailExistsObserver() {
 					// Select the node that will be observed for mutations
