@@ -250,7 +250,7 @@
 			$("#continue").click(function() {
 				var emailInput = $("#email").val();
 				if($("#claimVerificationServerError").attr('aria-hidden')=="false") {
-					$("li:nth-child(5) .attrEntry.validate").append("<br>" + emailInput + "<br is already registered. Please try log in or try another email.</br>");
+					$("li:nth-child(5) .attrEntry.validate").append("<p> This is a test message. </p>");
 				}
 // 				setTimeout(function() {
 // 					$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
