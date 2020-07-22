@@ -625,8 +625,14 @@
 				$(".user-name .user-name-cta").text(firstName + " " + lastName);
 				$(".user-email-cta").text(emailId);
 				
-				$(".profile-toggle").click(function () {
+				$(".profile-toggle").click(function (e) {
 					$(".profile-menu-container").toggle();
+					e.preventDefault();
+					e.stopPropagation();
+				});
+
+				$(document).click(function () {
+					$(".profile-menu-container").hide();
 				});
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
