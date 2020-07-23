@@ -256,11 +256,11 @@
 						$("#state").parent().find(".error").html("This information is required.");
 					}
 				});
-				
-// 				if($("#email").val() == "") {
-// 					$("#claimVerificationServerError").attr("aria-hidden", "true");
-// 				}
       });
+			
+			if($("#email").val() == "") {
+				$("#claimVerificationServerError").attr("aria-hidden", "true");
+			}
 			
 			function emailExistsObserver() {
 					// Select the node that will be observed for mutations
@@ -277,7 +277,6 @@
 							if (mutation.type === "attributes") {
 								if (mutation.attributeName == "aria-hidden") {
 									if (mutation.target.getAttribute(mutation.attributeName) == "true") {
-										$("#claimVerificationServerError").css("display", "none");
 									} else if ( mutation.target.getAttribute(mutation.attributeName) == "false") {
 											$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
 									}
