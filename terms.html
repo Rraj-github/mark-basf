@@ -32,24 +32,103 @@
         height: auto;
         margin-bottom: 225px;
       }
-      
+
+      .basf-terms h1 {
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 44px;
+        margin: 70px 0 0 200px;
+        color: #333333;
+      }
+
+      .basf-terms-text {
+        margin: 0 200px;
+        width: 727px;
+        font-size: 15px;
+        line-height: 25px;
+        color: #333;
+        margin-top: 43.19px;
+        margin-bottom: 28px;
+      }
+
       .basf-terms #api {
         margin: 0 200px;
       }
-      
+
       .basf-terms #attributeVerification .attr .CheckboxMultiSelect {
         list-style: none;
       }
-      
+
+      .basf-terms #attributeVerification .attr .CheckboxMultiSelect .attrEntry {
+        display: flex;
+        align-items: center;
+      }
+
+      .basf-terms
+        #attributeVerification
+        .attr
+        .CheckboxMultiSelect
+        .attrEntry
+        label:first-child {
+        display: none;
+      }
+
+      .basf-terms
+        #attributeVerification
+        .attr
+        .CheckboxMultiSelect
+        input#extension_Terms_true {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #cccccc;
+        background-color: #000;
+        color: red;
+        margin: 0;
+      }
+
+      .basf-terms #attributeVerification .attr ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      .basf-terms #attributeVerification .attr .CheckboxMultiSelect label {
+        font-size: 16px;
+        line-height: 19px;
+        color: #000;
+        margin-left: 14px;
+      }
+
       .basf-terms #attributeVerification .attr .CheckboxMultiSelect a {
         display: none;
       }
-      
+
       .basf-terms #attributeVerification .buttons {
         display: flex;
         flex-direction: row-reverse;
         margin-top: 28px;
         margin-bottom: 151px;
+      }
+
+      .basf-terms #attributeVerification .buttons #cancel {
+        border: none;
+        background: none;
+        color: #60b100;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: "Helvetica Neue Roman";
+        margin-right: 30px;
+      }
+
+      .basf-terms #attributeVerification .buttons #continue {
+        color: #fff;
+        background-color: #63af00;
+        border: none;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 0;
+        cursor: pointer;
+        height: 58px;
+        width: 100px;
       }
       
       /* Media Queries */
