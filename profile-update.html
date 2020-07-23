@@ -631,9 +631,15 @@
 					e.stopPropagation();
 				});
 
-				$(document).click(function () {
-					$(".profile-menu-container").hide();
-				});
+				$(document).click(function (e) {
+					var target = $(e.target);
+					if (
+						e.target != $(".profile-menu-container")[0] &&
+						target.parents(".profile-menu-container").length == 0
+					) {
+						$(".profile-menu-container").hide();
+						console.log($(".profile-menu-container"));
+					}
 				
 				$(".basf-profileUpdate #api .intro p").html("My Details");
 				$(".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a").text("");
