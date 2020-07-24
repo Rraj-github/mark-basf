@@ -134,7 +134,7 @@
       .basf-terms #attributeVerification #requiredFieldMissing {
         font-size: 14px;
         margin-bottom: 12px;
-        margin-top: -16px;
+        margin-top: -19px;
         color: #d20d26;
       }
       
@@ -170,14 +170,32 @@
           margin: 0 16px;
           width: auto;
         }
+        
+        .basf-terms #attributeVerification .attr .CheckboxMultiSelect .attrEntry {
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
         .basf-terms
           #attributeVerification
           .attr
           .CheckboxMultiSelect
-          input#extension_Terms_true,
-        .basf-terms #attributeVerification .attr .CheckboxMultiSelect label {
+          input#extension_Terms_true {
           margin-top: 20px;
+        }
+        
+        .basf-terms #attributeVerification .attr .CheckboxMultiSelect label {
+          margin-left: 0;
+          margin-top: 5px;
+        }
+        
+        .basf-terms #attributeVerification #requiredFieldMissing {
+          margin-bottom: -7px;
+          margin-top: -9px;
+        }
+        
+        .basf-terms .attrEntry .error.itemLevel {
+          margin-left: 0;
         }
 
         .basf-terms #attributeVerification .buttons {
