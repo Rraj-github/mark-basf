@@ -284,6 +284,9 @@
 									} else if ( mutation.target.getAttribute(mutation.attributeName) == "false") {
 // 										var emailStr = $("#claimVerificationServerError").text();
 // 										var emailSubStr = emailStr.substring(11, 22);
+										if($("#claimVerificationServerError").text().indexOf("registered")>0) {
+											console.log("Working");
+										}
 // 											if(emailSubStr) {
 												$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
 // 												console.log(emailSubStr);
