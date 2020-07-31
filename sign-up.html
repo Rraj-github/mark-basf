@@ -282,12 +282,12 @@
 								if (mutation.attributeName == "aria-hidden") {
 									if (mutation.target.getAttribute(mutation.attributeName) == "true") {
 									} else if ( mutation.target.getAttribute(mutation.attributeName) == "false") {
-										var emailStr = $("#claimVerificationServerError").text();
-										var emailSubStr = emailStr.substring(11, 22);
-											if(emailSubStr) {
+// 										var emailStr = $("#claimVerificationServerError").text();
+// 										var emailSubStr = emailStr.substring(11, 22);
+// 											if(emailSubStr) {
 												$("#claimVerificationServerError").html(emailInput + " is already registered. Please try log in or try another email.");
-												console.log(emailSubStr);
-											}
+// 												console.log(emailSubStr);
+// 											}
 									}
 								}
 							}
