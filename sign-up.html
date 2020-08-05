@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	  <link rel="stylesheet" href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/fonts.css?sp=r&amp;st=2020-07-31T17:09:21Z&amp;se=2025-08-01T01:09:21Z&amp;spr=https&amp;sv=2019-12-12&amp;sr=b&amp;sig=7dT8b%2FdVBgEw1ivCW3LwvTY%2B16FROxVUWPPdt2%2BjG%2Bo%3D">
+	  <link href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/azure-responsive.css?sp=r&st=2020-08-04T14:32:10Z&se=2025-08-04T22:32:10Z&spr=https&sv=2019-12-12&sr=b&sig=xnwuU%2F30xxVVzYdJ%2FTshHbXiohS6qqv%2FHzwWPfxxmv8%3D" rel="stylesheet" type="text/css" data-preload="true"/>
+    <link href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/azure-styles.css?sp=r&st=2020-08-04T14:32:54Z&se=2025-08-04T22:32:54Z&spr=https&sv=2019-12-12&sr=b&sig=WdtJfEYuedpYZFtYcWXfbT5BO9mH5Nv3feqKkUKNaqc%3D" rel="stylesheet" type="text/css" data-preload="true"/>
+    <link rel="stylesheet" href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/fonts.css?sp=r&st=2020-07-31T17:09:21Z&se=2025-08-01T01:09:21Z&spr=https&sv=2019-12-12&sr=b&sig=7dT8b%2FdVBgEw1ivCW3LwvTY%2B16FROxVUWPPdt2%2BjG%2Bo%3D">
+	
     <title>Sign Up</title>
     
     <style>
@@ -17,7 +20,7 @@
         text-align: left;
       }
       
-      header {
+/*       header {
         background: #63AF00;
         width: 100%;
         height: 78px;
@@ -182,11 +185,11 @@
       
       .basf-signUp #attributeVerification .attr ul li .attrEntry .error.itemLevel:not(:nth-of-type(1)) {
         display: none;
-      }
+      } */
 			
 			/* Media Queries */
 			/* Mobile Layout*/
-			@media (max-width: 767px) {
+/* 			@media (max-width: 767px) {
 				.basf-signUp #api {
 						margin: 0 16px;
 				}
@@ -221,21 +224,21 @@
 				.basf-signUp #attributeVerification .buttons {
 					margin: 32px 16px 48px 0;
 				}
-			}
+			} */
 			
 			/*Tablet Layout */
-			@media (max-width: 991px) and (min-width: 768px) {
+/* 			@media (max-width: 991px) and (min-width: 768px) {
 				.basf-signUp #api {
 					margin: 0 100px 0 80px;
 				}
-			}
+			} */
 			
 			/*Tablet Portrait */
-			@media only screen and (max-device-width: 1366px) and (min-device-width: 1024px) and (orientation: portrait) {
+/* 			@media only screen and (max-device-width: 1366px) and (min-device-width: 1024px) and (orientation: portrait) {
 				.basf-signUp #api {
 					margin: 0 100px 0 80px;
 				}
-			}
+			} */
 
     </style>
   </head>
@@ -248,7 +251,7 @@
       <div id="api"></div>
     </div>
     
-    <script>
+<!--     <script>
       $(document).ready(function () {
         $("#api .intro>p").html("Create your BASF account");
         $(".buttons #cancel").html("Back");
@@ -300,6 +303,10 @@
 				}
 			
 				emailExistsObserver();
-		</script>
+		</script> -->
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://usb2cextstorage.blob.core.windows.net/basf-eop/js/sign-up.js?sp=r&st=2020-08-04T12:49:52Z&se=2025-08-04T20:49:52Z&spr=https&sv=2019-12-12&sr=b&sig=1dR4DMTClawruNqV%2B%2BHfmSEu4j%2Bo6PcoFaRJSisqYd4%3D"></script>
+    
   </body>
 </html>
