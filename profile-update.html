@@ -5,23 +5,471 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
-      href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/azure-responsive.css?sp=r&st=2020-08-04T14:32:10Z&se=2025-08-04T22:32:10Z&spr=https&sv=2019-12-12&sr=b&sig=xnwuU%2F30xxVVzYdJ%2FTshHbXiohS6qqv%2FHzwWPfxxmv8%3D"
-      rel="stylesheet"
-      type="text/css"
-      data-preload="true"
-    />
-    <link
-      href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/azure-styles.css?sp=r&st=2020-08-04T14:32:54Z&se=2025-08-04T22:32:54Z&spr=https&sv=2019-12-12&sr=b&sig=WdtJfEYuedpYZFtYcWXfbT5BO9mH5Nv3feqKkUKNaqc%3D"
-      rel="stylesheet"
-      type="text/css"
-      data-preload="true"
-    />
-    <link
       rel="stylesheet"
       href="https://usb2cextstorage.blob.core.windows.net/basf-eop/css/fonts.css?sp=r&st=2020-07-31T17:09:21Z&se=2025-08-01T01:09:21Z&spr=https&sv=2019-12-12&sr=b&sig=7dT8b%2FdVBgEw1ivCW3LwvTY%2B16FROxVUWPPdt2%2BjG%2Bo%3D"
     />
 
     <title>Profile Update</title>
+    
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .profileUpdate-header {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Helvetica Neue Roman";
+        margin-bottom: 0;
+        background-color: #65ad1e;
+      }
+
+      .profileUpdate-header img {
+        margin: 0px 0 0 30.9px;
+        width: 155.48px;
+      }
+
+      .user-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin-right: 52px;
+        text-transform: capitalize;
+      }
+
+      .user-name a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .profile-menu-container {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #fff;
+        border-radius: 4px;
+        border: 2px solid seashell;
+        border: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow: hidden;
+        z-index: 10;
+        font-family: "Helvetica Neue Light";
+        display: none;
+      }
+
+      .profile-menu-block {
+        margin: 0 29px;
+      }
+
+      .profile-menu-block .user-name {
+        display: block;
+        margin-right: 0;
+      }
+
+      .profile-menu-block .user-name .user-name-cta {
+        color: #333;
+        font-size: 32px;
+        line-height: 39px;
+        margin-top: 37.93px;
+        margin-bottom: 14px;
+      }
+
+      .profile-menu-block .user-name .user-email-cta {
+        color: #828282;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 22px;
+        text-transform: none;
+      }
+
+      .profile-menu-block hr {
+        border: 1px solid #bebebe;
+      }
+
+      .profile-menu-cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      .profile-menu-cta a {
+        text-decoration: none;
+        color: #828282;
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+
+      .profile-menu-cta .myAccount-cta {
+        padding: 13px 120px 12px;
+        margin-bottom: 22px;
+        margin-top: 16px;
+      }
+
+      .profile-menu-cta .myOrder-cta {
+        margin-bottom: 22px;
+        padding: 12px 107px 12px;
+      }
+
+      .logout-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .logout-block a {
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background: #63af00;
+        width: 100%;
+      }
+
+      .logout-block .logout-cta {
+        margin-top: 29px;
+        margin-bottom: 53px;
+        padding: 20px 0;
+      }
+
+      .profileUpdate-details,
+      .profileUpdate-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #dcdcdc;
+        height: 67px;
+        font-family: "Helvetica Neue Light";
+      }
+
+      .profileUpdate-menu {
+        background-color: #65ad1e;
+        height: 45px;
+        margin-bottom: 40px;
+      }
+
+      .profileUpdate-details h1 {
+        margin-left: 50px;
+        letter-spacing: 0.5px;
+        color: #333333;
+      }
+
+      .profileUpdate-details .details-list,
+      .profileUpdate-menu .menu-list {
+        display: flex;
+      }
+
+      .profileUpdate-menu .menu-list {
+        margin-left: 49px;
+        padding: 0;
+      }
+
+      .profileUpdate-details .details-list .details-list-item,
+      .profileUpdate-menu .menu-list .menu-list-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        font-size: 14px;
+        margin-right: 25px;
+        cursor: pointer;
+      }
+
+      .profileUpdate-details .details-list .details-list-item:last-child {
+        margin-right: 48px;
+      }
+
+      .profileUpdate-details .details-list .details-list-item a,
+      .profileUpdate-menu .menu-list .menu-list-item a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #65ad1e;
+      }
+
+      .profileUpdate-menu .menu-list .menu-list-item a {
+        color: #fff;
+      }
+
+      .basf-profileUpdate {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: "Helvetica Neue Light";
+        border: 2px solid seashell;
+        border: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        height: auto;
+        margin-bottom: 240px;
+      }
+
+      .basf-profileUpdate #api {
+        margin: 0 60px;
+      }
+
+      .basf-profileUpdate #api .intro p {
+        font-size: 36px;
+        font-weight: 300 !important;
+        padding-top: 70px;
+        margin-bottom: 31px;
+        color: #333333;
+        letter-spacing: normal;
+        line-height: 44px;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li {
+        list-style: none;
+        margin-top: 32px;
+        flex: 0 0 47%;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry label {
+        font-size: 13px;
+        color: #333333;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry input,
+      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry select {
+        font-size: 18px;
+        padding: 16px 0 16px 18px;
+        width: 100%;
+        border: 0px solid #8f8f8f;
+        border-top: 1.5px double #a9a9a9;
+        background: #f0f0f0;
+        color: #8f8f8f;
+        margin-top: 5px;
+        outline: none;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li:first-child,
+      .basf-profileUpdate #attributeVerification .attr ul li:nth-child(2) {
+        margin-top: 0;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li:nth-child(5),
+      .basf-profileUpdate #attributeVerification .attr ul li:nth-child(6) {
+        flex: 0 0 100%;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li:nth-child(8) {
+        flex: 0 0 15%;
+        margin-left: 20px;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li:nth-child(9) {
+        flex: 0 0 27%;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li:last-child {
+        flex: 0 0 100%;
+      }
+
+      .basf-profileUpdate #attributeVerification .buttons {
+        margin-top: 60px;
+        padding-bottom: 91px;
+      }
+
+      .basf-profileUpdate #attributeVerification #continue {
+        font-family: "Helvetica Neue Roman";
+        color: #fff;
+        background-color: #63af00;
+        border: none;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 20px 33px;
+        cursor: pointer;
+      }
+
+      .basf-profileUpdate #attributeVerification #cancel {
+        font-family: "Helvetica Neue Roman";
+        border: none;
+        background: none;
+        color: #60b100;
+        font-size: 16px;
+        line-height: 18px;
+        margin-left: 29px;
+      }
+
+      .basf-profileUpdate #api #attributeVerification #requiredFieldMissing,
+      .basf-profileUpdate #api #attributeVerification #fieldIncorrect {
+        font-size: 14px;
+        color: #d20d26;
+        margin-top: -22px;
+        margin-bottom: 10px;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry a {
+        display: none;
+      }
+
+      .basf-profileUpdate #attributeVerification .attr ul li .attrEntry {
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .basf-profileUpdate
+        #attributeVerification
+        .attr
+        ul
+        li
+        .attrEntry
+        .error.itemLevel {
+        font-size: 12px;
+        text-decoration: none;
+        color: #d20d26;
+        order: 4;
+      }
+      
+      @media (max-width: 767px) {
+        .profileUpdate-header img {
+          margin: 0 !important;
+        }
+
+        .user-name {
+          margin-right: 16px !important;
+        }
+
+        .profileUpdate-details h1 {
+          font-size: 20px !important;
+          margin-left: 16px !important;
+        }
+
+        .profileUpdate-details .details-list .details-list-item {
+          margin-right: 16px !important;
+          font-size: 12px !important;
+        }
+
+        .profileUpdate-details .details-list .details-list-item a {
+          flex-direction: column !important;
+          text-align: center !important;
+        }
+
+        .profileUpdate-menu .menu-list {
+          margin-left: 16px !important;
+        }
+
+        .profile-menu-container {
+          top: 64px !important;
+          right: 0 !important;
+        }
+
+        .profile-menu-block .user-name .user-name-cta {
+          font-size: 28px !important;
+          line-height: 32px !important;
+          margin-top: 26px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .profile-menu-block .user-name .user-email-cta {
+          font-size: 20px !important;
+          line-height: 24px !important;
+          margin-bottom: 16px !important;
+        }
+
+        .profile-menu-cta {
+          font-size: 14px !important;
+          line-height: 18px !important;
+        }
+
+        .profile-menu-cta .myAccount-cta {
+          margin-bottom: 18px !important;
+          margin-top: 14px !important;
+        }
+
+        .profile-menu-cta .myOrder-cta {
+          margin-bottom: 18px !important;
+        }
+
+        .logout-block .logout-cta {
+          margin-top: 22px !important;
+          margin-bottom: 44px !important;
+          padding: 18px 0 !important;
+        }
+
+        .basf-profileUpdate {
+          margin-right: 16px !important;
+          margin-left: 16px !important;
+          width: auto !important;
+        }
+
+        .basf-profileUpdate #api {
+          margin: 0 16px !important;
+        }
+
+        .basf-profileUpdate #api .intro p {
+          font-size: 26px !important;
+          margin: 32px 0 6px !important;
+          line-height: normal !important;
+        }
+
+        .basf-profileUpdate #api #attributeVerification #requiredFieldMissing,
+        .basf-profileUpdate #api #attributeVerification #fieldIncorrect {
+          margin-top: 0 !important;
+          margin-bottom: -10px !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul {
+          flex-direction: column !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li {
+          flex: 0 0 100% !important;
+          margin-right: 14px !important;
+          margin-top: 22px !important;
+          margin-bottom: 0 !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li.DropdownSingleSelect {
+          flex: 0 0 100% !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry input,
+        .basf-profileUpdate #attributeVerification .attr ul li .attrEntry select {
+          font-size: 16px !important;
+          padding: 12px 0 12px 14px !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .attr ul li:nth-child(8) {
+          margin-left: 0 !important;
+        }
+
+        .basf-profileUpdate #attributeVerification .buttons {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 32px !important;
+          margin-bottom: 64px !important;
+        }
+
+        .basf-profileUpdate #attributeVerification #continue {
+          padding: 16px 20px !important;
+          font-size: 14px !important;
+          line-height: normal !important;
+        }
+
+        .basf-profileUpdate #attributeVerification #cancel {
+          margin-top: 24px !important;
+          margin-left: 0 !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
