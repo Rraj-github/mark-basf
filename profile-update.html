@@ -674,10 +674,9 @@
 
         $(".logout-cta").click(function () {
           var domainUrl = window.location.href;
-          window.location = domainUrl.replace(
-            'B2C_1A_ProfileEdit/api/SelfAsserted/confirmed?csrf_token=WHFZZXo2eE1SSWlsRWxxbW5Zd3k0eDU2Zjl2d0xTS0RhREZXa0tCMm84NFdGanJTYml0bHR6Wk9LejMrczJiSXNDL1FLMjVrenRFSVdPdzBLMGZJcGc9PTsyMDIwLTA4LTA2VDEzOjE3OjU5LjI5ODM2NTRaO01jR0pJMHZlZFY5R2UyZFhXZ2NKZ0E9PTt7IlRhcmdldEVudGl0eSI6IkxvY2FsQWNjb3VudFNpZ25pbkVtYWlsRXhjaGFuZ2UiLCJPcmNoZXN0cmF0aW9uU3RlcCI6Mn0=&tx=StateProperties=eyJUSUQiOiIyNzgxMmZkYi1iMWY1LTQ4ZjAtYWNhNi05NzAxZGI1MmUzZmEifQ&p=B2C_1A_ProfileEdit&diags=%7B"pageViewId"%3A"07c1ea9d-ca6b-41c7-8be9-a6aed865cbc2"%2C"pageId"%3A"SelfAsserted"%2C"trace"%3A%5B%7B"ac"%3A"T005"%2C"acST"%3A1596719879%2C"acD"%3A2%7D%2C%7B"ac"%3A"T021%20-%20URL%3Ahttps%3A%2F%2Fgroupbsf.b2clogin.com%2Fstatic%2Ftenant%2Ftemplates%2FAzureBlue%2FselfAsserted.cshtml%3Fslice%3D001-000%26dc%3DPNQ"%2C"acST"%3A1596719879%2C"acD"%3A274%7D%2C%7B"ac"%3A"T019"%2C"acST"%3A1596719879%2C"acD"%3A7%7D%2C%7B"ac"%3A"T004"%2C"acST"%3A1596719879%2C"acD"%3A4%7D%2C%7B"ac"%3A"T003"%2C"acST"%3A1596719879%2C"acD"%3A2%7D%2C%7B"ac"%3A"T035"%2C"acST"%3A1596719880%2C"acD"%3A0%7D%2C%7B"ac"%3A"T030Online"%2C"acST"%3A1596719880%2C"acD"%3A0%7D%2C%7B"ac"%3A"T017T010"%2C"acST"%3A1596719885%2C"acD"%3A590%7D%2C%7B"ac"%3A"T002"%2C"acST"%3A1596719886%2C"acD"%3A0%7D%2C%7B"ac"%3A"T017T010"%2C"acST"%3A1596719885%2C"acD"%3A591%7D%5D%7D',
-            'B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here'
-          );
+          var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
+          var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here");
+          window.location = redirectUrl;
         });
       });
     </script>
