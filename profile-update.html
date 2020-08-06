@@ -633,6 +633,7 @@
       <div id="api"></div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
       $(document).ready(function () {
         var firstName = $("#givenName").val();
@@ -675,7 +676,7 @@
           var domainUrl = window.location.href;
           var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
           var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here");
-          window.location = redirectUrl;
+          window.location = url.replace(redirectUrl);
         });
       });
     </script>
