@@ -662,6 +662,14 @@
 							window.location='https://www.google.com/';
 					});	
 				};
+				
+				$(".logout-cta").click(function () {
+          var domainUrl = window.location.toString();
+          window.location = domainUrl.replace(
+            /B2C_1A_ProfileEdit/,
+            "B2C_1_EOP_Signin"
+          );
+        });
 			});
     </script>
 
