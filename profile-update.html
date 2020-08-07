@@ -664,19 +664,16 @@
           ".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a"
         ).text("");
 
-        $("button#cancel").attr("onClick", "redirect()");
-
-        function redirect() {
-          $("#cancel").click(function () {
-            window.location = "https://www.google.com/";
-          });
-        }
-
         $(".logout-cta").click(function () {
           var domainUrl = window.location.href;
           var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
           var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here";
           location.replace(redirectUrl);
+        });
+        
+        $(".myOrder-cta").click(function () {
+          window.location =
+            "https://aem-dev-author.basf.com/content/basf/cxm/agriculture/us/en/pss/turf-ornamentals/turf/early-order-program-v2.html";
         });
       });
     </script>
