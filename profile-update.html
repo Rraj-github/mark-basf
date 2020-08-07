@@ -663,7 +663,15 @@
         $(
           ".basf-profileUpdate #attributeVerification .attr ul li .attrEntry a"
         ).text("");
+        
+        // $("button#cancel").attr("onClick", "redirect()");
 
+        // function redirect() {
+        //   $("#cancel").click(function () {
+        //     window.location = "https://www.google.com/";
+        //   });
+        // }
+        
         $(".logout-cta").click(function () {
           var domainUrl = window.location.href;
           var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
