@@ -262,10 +262,30 @@
         >
       </div>
       <div id="api"></div>
+      <div class="terms-policy-text">
+        <span
+          >I understand and acknowledge that specific categories of Data
+          provided pursuant to my use of this program is subject to the
+          <a
+            href="https://www.basf.com/us/en/legal/data-protection.html"
+            class="policy-text-cta"
+            >Privacy Policy</a
+          >, which describes how information may be collected, processed,
+          stored, and used.</span
+        >
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://usb2cextstorage.blob.core.windows.net/basf-eop/js/terms.js?sp=r&st=2020-08-04T12:52:04Z&se=2025-08-04T20:52:04Z&spr=https&sv=2019-12-12&sr=b&sig=7vXckehTTwuHQ4vBU4QUpyZf3oPMF7S4q2LKedWHrBM%3D"></script>
-  
+<!--     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://usb2cextstorage.blob.core.windows.net/basf-eop/js/terms.js?sp=r&st=2020-08-04T12:52:04Z&se=2025-08-04T20:52:04Z&spr=https&sv=2019-12-12&sr=b&sig=7vXckehTTwuHQ4vBU4QUpyZf3oPMF7S4q2LKedWHrBM%3D"></script> -->
+    <script>
+      $(document).ready(function () {
+        $(".basf-terms #attributeVerification .buttons #cancel").html("Back");
+        $("div.terms-policy-text")
+          .detach()
+          .appendTo(
+            ".basf-terms #api #attributeVerification .attr .CheckboxMultiSelect"
+          );
+      });
+    </script>
   </body>
 </html>
