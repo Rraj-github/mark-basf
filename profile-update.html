@@ -675,9 +675,12 @@
         
         $(".logout-cta").click(function () {
           var domainUrl = window.location.href;
-          var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
-          var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here";
-          location.replace(redirectUrl);
+//           var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
+//           var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=https://redirect_here";
+          var urlTextIndex = domainUrl.indexOf("csrf_token=");
+          var redirectUrl = domainUrl.slice(urlTextIndex)
+          console.log(redirectUrl);
+//           location.replace(redirectUrl);
         });
       });
     </script>
