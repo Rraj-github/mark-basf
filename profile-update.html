@@ -678,7 +678,7 @@
           var uriIndex = domainUrl.indexOf("csrf_token=");
           var slicedUri = domainUrl.slice(uriIndex);
           var urlTextIndex = domainUrl.indexOf("B2C_1A_ProfileEdit");
-          var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=" + slicedUri;
+          var redirectUrl = domainUrl.slice(0, urlTextIndex) + "B2C_1_EOP_Signin/oauth2/v2.0/logout?post_logout_redirect_uri=" + slicedUri + "/redirect-here";
           console.log("New Redirect Url = ", redirectUrl);
 //           location.replace(redirectUrl);
         });
